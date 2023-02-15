@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 
 namespace Inheritance
 {
@@ -29,11 +30,40 @@ namespace Inheritance
              * Creatively display the class member values 
              */
 
+            //Bird davesBird = new Bird()
+            //{
+
+            //};
+            //^^^^^object Initializer Syntax^^^^^
+            var Parrot = new Bird();
+            Parrot.Flying = true;
+            Parrot.FeatherColors = "Blue, Yellow & Red";
+            Parrot.BeakLength = 1.5;
+            //^^^^Dot Notation^^^^^^^^^^
             /*Create an object of your Reptile class
              *  give values to your members using the object of your Reptile class
              *  
              * Creatively display the class member values 
              */
+            var BeardedDragon = new Reptile()
+            {
+                Exosceleton = true,
+                FeedingPerDay = 2,
+                Nocternal = false,
+                Shed = true
+            };
+            //we can console write line this out or list with array or List
+            var allAnimals = new Animal[] { Parrot, BeardedDragon };
+            //^^^^^^set up list to then access the instance^^^^^^
+            foreach (var indevidualAnimal in allAnimals)
+            {
+                Console.WriteLine($"Alive: {indevidualAnimal.IsAlive}");
+                Console.WriteLine($"This Animal natrally lives in a {indevidualAnimal.Habitat} habitat.");
+                Console.WriteLine($"This is a {indevidualAnimal.LandSeaFlying} animal.");
+                Console.WriteLine($"This animal can live up to {indevidualAnimal.ExpectedAge} years of age.");
+                Console.WriteLine($"");//divider in text--------------------------
+
+            }
         }
     }
 }
